@@ -1,4 +1,27 @@
+[user]
+	email = andrio.costa@dbseller.com.br
+	name = Andrio Costa
+[difftool]
+	prompt = false
+[diff]
+	tool = meld
+[push]
+	default = simple
+[mergetool "vimdiff3"]
+	cmd = cp \"$LOCAL\" \"$MERGED\" && meld \"$MERGED\" \"$REMOTE\"
+	keepBackup = false
+[merge]
+	tool = vimdiff3
+[mergetool]
+	prompt = false
+[core]
+	pager = less -r
+	fileMode = false
+	autocrlf = input
+[color]
+	ui = true
 [alias]
 	lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-	fileTag = "!f() { git diff --name-only $(git show --pretty=format:%P \"$1\"); }; f"
+	fileTagOld = "!f() { git diff --name-only $(git show --pretty=format:%P \"$1\"); }; f"
+	fileTag = "!f() { git diff --name-only $(git log --no-walk --pretty=format:%P \"$1\"); }; f"
 	dfmaster = "!f() { git diff --name-status origin/master \"$1\"; }; f"
