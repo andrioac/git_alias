@@ -6,4 +6,6 @@
 	criaBranch = "!f() { git checkout master && git fetch --all -p && git pull origin master && git checkout -b \"$1\"; }; f"
 	master = "!f() { git checkout master && git fetch --all -p && git pull origin master; }; f"
 	pm = "!f() { git fetch --all -p && git pull origin master git push; }; f"
+	desenvolvimento = "!f() { git checkout desenvolvimento && git fetch --all -p && git pull origin desenvolvimento; }; f"
+	pdev = "!f() { git fetch --all -p && git pull origin desenvolvimento  && git push origin $(git branch --show-current); }; f"
 
