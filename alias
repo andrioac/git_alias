@@ -3,3 +3,7 @@
 	fileTagOld = "!f() { git diff --name-only $(git show --pretty=format:%P \"$1\"); }; f"
 	fileTag = "!f() { git diff --name-only $(git log --no-walk --pretty=format:%P \"$1\"); }; f"
 	dfmaster = "!f() { git diff --name-status origin/master \"$1\"; }; f"
+	criaBranch = "!f() { git checkout master && git fetch --all -p && git pull origin master && git checkout -b \"$1\"; }; f"
+	master = "!f() { git checkout master && git fetch --all -p && git pull origin master; }; f"
+	pm = "!f() { git fetch --all -p && git pull origin master git push; }; f"
+
