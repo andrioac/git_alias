@@ -21,9 +21,10 @@
 	lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 	fileTagOld = "!f() { git diff --name-only $(git show --pretty=format:%P \"$1\"); }; f"
 	fileTag = "!f() { git diff --name-only $(git log --no-walk --pretty=format:%P \"$1\"); }; f"
+	updateTags = "!f() {git fetch --tags --all -f}" 
 	dfmaster = "!f() { git diff --name-status origin/master \"$1\"; }; f"
 	criaBranch = "!f() { git checkout master && git fetch --all -p && git pull origin master && git checkout -b \"$1\"; }; f"
 	master = "!f() { git checkout master && git fetch --all -p && git pull origin master; }; f"
-	pm = "!f() { git fetch --all -p && git pull origin master git push; }; f"
+	pm = "!f() { git fetch --all -p && git pull origin master && git push; }; f"
 	desenvolvimento = "!f() { git checkout desenvolvimento && git fetch --all -p && git pull origin desenvolvimento; }; f"
 	pdev = "!f() { git fetch --all -p && git pull origin desenvolvimento  && git push origin $(git branch --show-current); }; f"
